@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ChatFlow</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+
+  <!-- AUTH OVERLAY -->
+  <div id="auth-overlay" class="auth-overlay">
+    <div class="auth-box">
+      <div class="auth-logo">💬 ChatFlow</div>
+      <p class="auth-subtitle">Enter a username to continue</p>
+      <input id="username-input" type="text" placeholder="Your name..." maxlength="20" />
+      <button id="join-btn">Join Chat</button>
+    </div>
+  </div>
+
+  <!-- MAIN APP -->
+  <div id="app" class="app hidden">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <span class="logo">💬 ChatFlow</span>
+        <div class="user-badge" id="current-user">--</div>
+      </div>
+
+      <div class="sidebar-section">
+        <span class="section-label">ROOMS</span>
+        <ul class="room-list" id="room-list">
+          <li class="room-item active" data-room="general"># general</li>
+          <li class="room-item" data-room="tech"># tech</li>
+          <li class="room-item" data-room="random"># random</li>
+          <li class="room-item" data-room="design"># design</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <span class="section-label">ONLINE</span>
+        <ul class="user-list" id="user-list"></ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <span id="connection-status" class="status-dot offline">●</span>
+        <span id="status-label">Disconnected</span>
+      </div>
+    </aside>
+
+    <!-- CHAT AREA -->
+    <main class="chat-area">
+
+      <!-- CHAT HEADER -->
+      <header class="chat-header">
+        <div class="chat-header-left">
+          <span class="chat-room-name" id="chat-room-name"># general</span>
+          <span class="chat-room-desc" id="chat-room-desc">Welcome to general chat</span>
+        </div>
+        <div class="chat-header-right">
+          <span class="member-count" id="member-count">0 online</span>
+        </div>
+      </header>
+
+      <!-- MESSAGES -->
+      <section class="messages-container" id="messages-container">
+        <div class="messages-list" id="messages-list"></div>
+        <div class="typing-indicator hidden" id="typing-indicator">
+        <div class="typing-dots">
+          <span></span><span></span><span></span>
+        </div>
+          <span class="typing-label"></span>
+        </div>
+      </section>
+
+      <!-- INPUT BAR -->
+      <footer class="input-bar">
+        <div class="input-wrapper">
+          <input
+            type="text"
+            id="message-input"
+            placeholder="Message #general..."
+            maxlength="500"
+            autocomplete="off"
+          />
+          <div class="input-actions">
+            <button class="send-btn" id="send-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="js/app.js" type="module"></script>
+</body>
+</html>

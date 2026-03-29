@@ -1,0 +1,41 @@
+@keyframes typing-bounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30%            { transform: translateY(-6px); opacity: 1; }
+}
+
+@keyframes message-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.message { animation: message-in 0.2s ease forwards; }
+.auth-box { animation: slide-up 0.3s ease forwards; }
+.app { animation: fade-in 0.25s ease forwards; }
+
+/* Shake for invalid input */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-8px); }
+  40%       { transform: translateX(8px); }
+  60%       { transform: translateX(-5px); }
+  80%       { transform: translateX(5px); }
+}
+.shake { animation: shake 0.35s ease forwards; }
+
+/* Auth error message */
+.auth-error {
+  font-size: 0.78rem;
+  color: var(--danger);
+  text-align: center;
+  animation: fade-in 0.2s ease forwards;
+}

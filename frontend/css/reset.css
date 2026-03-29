@@ -1,0 +1,5 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; overflow: hidden; }
+ul { list-style: none; }
+button { cursor: pointer; border: none; background: none; }
+input { outline: none; border: none; background: none; }
